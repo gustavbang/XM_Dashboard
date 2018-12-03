@@ -1,0 +1,39 @@
+<div class="contain">
+
+  <div class="row">
+
+    <div class="offset-md-6 top">
+
+      <div class="login">
+        <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+            
+          <h3>
+            Username
+          </h3>
+          <input type="text" formControlName="username" id="username" class="form-control">
+          <div *ngIf="loginForm.controls.username.touched && loginForm.controls.username.errors?.required">
+            Username must be filled out
+          </div>
+          <div *ngIf="loginForm.controls.username.dirty && loginForm.controls.username.errors?.minlength">
+            Username must be 5 characters
+          </div>
+
+          <h3>
+            Password
+          </h3>
+          <input type="password" formControlName="password" id="password" class="form-control">
+          <div *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+            Password must be filled out
+          </div>
+
+
+          <br />
+          <button id="btnLogin" class="btn btn-dark">Login</button>
+
+          {{loginForm.status}}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
