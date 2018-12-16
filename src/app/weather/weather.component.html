@@ -1,4 +1,20 @@
-<p>
-  weather works!
-</p>
+<div class="contain">
 
+
+      <div class="centered">
+
+      <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+            <h3>Write City and code to find weather</h3>
+            <input type="text" id="city" formControlName="city" class="form-control">
+            <input type="text" id="code" formControlName="code" class="form-control">
+
+            <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+
+      <h3>Searching for city: {{locationForm.controls.city.value}} in the country: {{locationForm.controls.code.value}}</h3>
+      <h1>City: {{weather.name}}</h1>
+      <h1>Coordinates: {{weather.coord.lon}}, {{weather.coord.lat}} </h1>
+
+      <h1>Weather: {{weather.weather[0].main}}</h1>
+      <h1>Description: {{weather.weather[0].description}}</h1>
+      <h1>Wind speed: {{weather.wind.speed}}</h1>

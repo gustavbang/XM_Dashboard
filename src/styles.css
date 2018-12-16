@@ -8,3 +8,14 @@
 .btn {
     margin: 5px;
 }
+
+
+.centered {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+}

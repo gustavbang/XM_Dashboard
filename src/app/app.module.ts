@@ -1,28 +1,35 @@
+import { WeatherServiceService } from './weather-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
-import { RedditComponent } from './reddit/reddit.component';
 import { BtcComponent } from './btc/btc.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-//material
-import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
+//material
 
+import {MatCardModule} from '@angular/material/card';
+import { HttpModule } from '@angular/http';
+import { RecipesComponent } from './recipes/recipes.component';
+
+//Redux
+
+import {StoreModule} from '@ngrx/store';
+import {languageReducer} from './reducers/language.reducer'
+import { headlineReducer } from './reducers/headline.reducer'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
-    RedditComponent,
     BtcComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RecipesComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,8 +37,14 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
     //Material
+    MatCardModule,
+    HttpModule,
+    StoreModule.forRoot({
+      message: languageReducer,
+      headline: headlineReducer
+    })
   ],
-  providers: [],
+  providers: [WeatherServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

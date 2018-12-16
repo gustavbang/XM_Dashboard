@@ -1,3 +1,5 @@
+import { RecipesComponent } from './../recipes/recipes.component';
+import { BtcComponent } from './../btc/btc.component';
 import { AppComponent } from './../app.component';
 import { LoginComponent } from './../login/login.component';
 import { WeatherComponent } from './../weather/weather.component';
@@ -8,10 +10,13 @@ import { HomeComponent } from '../home/home.component';
 
 
 const routes: Routes = [
-  { path: 'weather', component: WeatherComponent },
   { path: 'home', component: HomeComponent},
-  { path: '', component: LoginComponent}
+  { path: '', component: LoginComponent},
 
+  //pages
+  { path: 'weather', component: WeatherComponent},
+  { path: 'btc', component: BtcComponent, canActivate: [AuthGuard]},
+  { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard]},
 ];
 
 

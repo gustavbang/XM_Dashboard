@@ -1,37 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
+hej
+{{message$ | async}}
+<button (click)="englishMessage()" class="btn btn-success custom right">English</button>
+<button (click)="danishMessage()" class="btn btn-info custom right">Danish</button>
 
-<div class="contain">
   <div class="row">
     <div class="col-sm-10">
+        <button type="button" routerLink="home" class="btn btn-default">
+            <img src="assets/img/logo.png" alt="HTML tutorial" style="width:60px;height:60px;border:0;">
+        </button>
+        <button type="button" routerLink="weather" class="btn btn-warning custom">Weather</button>
+        <button type="button" routerLink="btc" class="btn btn-primary custom">BTC</button>
+        <button type="button" routerLink="recipes" class="btn btn-danger custom">Recipes</button>
+
+        
       <router-outlet></router-outlet>
     </div>
-
-    <div class="col-sm-2">
-      <button type="button" routerLink="weather" class="btn btn-default">Weather</button>
-      <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-info">Info</button>
-      <button type="button" class="btn btn-warning">Warn</button>
-      <button type="button" class="btn btn-danger">Danger</button>
-      <button type="button" class="btn btn-default">Default</button>
-      <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-info">Info</button>
-      <button type="button" class="btn btn-warning">Warn</button>
-      <button type="button" class="btn btn-danger">Danger</button>
-      <button type="button" class="btn btn-default">Default</button>
-      <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-info">Info</button>
-      <button type="button" class="btn btn-warning">Warn</button>
-      <button type="button" class="btn btn-danger">Danger</button>
-      <button type="button" class="btn btn-default">Default</button>
-      <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-info">Info</button>
-      <button type="button" class="btn btn-warning">Warn</button>
-      <button type="button" class="btn btn-danger">Danger</button>
-    </div>
   </div>
-</div>
 
