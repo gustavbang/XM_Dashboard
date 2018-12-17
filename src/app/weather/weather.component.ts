@@ -10,11 +10,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class WeatherComponent implements OnInit {
   locationForm: FormGroup;
 
-  location={
-    city:'copenhagen',
-    code:'denmark'
-  };
-
   weather:any;
 
   constructor(private _weatherService: WeatherServiceService) { }
@@ -27,7 +22,7 @@ export class WeatherComponent implements OnInit {
   }
   
   onSubmit(): void {
-    console.log(this.locationForm.get('city').value + this.locationForm.get('code').value)
+    console.log(this.locationForm.get('city').value + " " + this.locationForm.get('code').value)
     this._weatherService.getWeather(this.locationForm.get('city').value, this.locationForm.get('code').value).subscribe(response => {
       this.weather = response });
   }

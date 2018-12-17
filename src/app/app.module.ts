@@ -19,7 +19,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 
 import {StoreModule} from '@ngrx/store';
 import {languageReducer} from './reducers/language.reducer'
-import { headlineReducer } from './reducers/headline.reducer'
+import {headlineReducer} from './reducers/headline.reducer'
 
 
 @NgModule({
@@ -40,7 +40,7 @@ import { headlineReducer } from './reducers/headline.reducer'
     MatCardModule,
     HttpModule,
     StoreModule.forRoot({
-      message: languageReducer,
+      language: languageReducer,
       headline: headlineReducer
     })
   ],

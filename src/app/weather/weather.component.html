@@ -11,10 +11,40 @@
             <button class="btn btn-primary" type="submit">Search</button>
       </form>
 
-      <h3>Searching for city: {{locationForm.controls.city.value}} in the country: {{locationForm.controls.code.value}}</h3>
-      <h1>City: {{weather.name}}</h1>
-      <h1>Coordinates: {{weather.coord.lon}}, {{weather.coord.lat}} </h1>
+      <h3>Searching for city: {{locationForm.controls.city.value}} <br/>in the country: {{locationForm.controls.code.value}}</h3>
+      <br/><br/>
 
-      <h1>Weather: {{weather.weather[0].main}}</h1>
-      <h1>Description: {{weather.weather[0].description}}</h1>
-      <h1>Wind speed: {{weather.wind.speed}}</h1>
+
+<table class="table">
+      <thead>
+            <th scope="col">City:</th>
+            <th scope="col">{{weather.name}}</th>
+      </thead>
+
+      <tbody>
+            <tr>
+                  <th scope="row">Coordinates:</th>
+                  <td>{{weather.coord.lon}}, {{weather.coord.lat}}</td>
+            </tr>
+
+            <tr>
+                  <th scope="row">Temperature:</th>
+                  <td>{{weather.main.temp-273}}</td>
+            </tr>
+
+            <tr>
+                  <th scope="row">Weather:</th>
+                  <td>{{weather.weather[0].main}}</td>
+            </tr>
+
+            <tr>
+                  <th scope="row">Description:</th>
+                  <td>{{weather.weather[0].description}}</td>
+            </tr>
+
+            <tr>
+                  <th scope="row">Wind speed:</th>
+                  <td>{{weather.wind.speed}}</td>
+            </tr>
+      </tbody>
+</table>

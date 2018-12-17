@@ -1,15 +1,28 @@
-import {Action} from '@ngrx/store';
+import { Language } from './../entities/Language';
+import * as LanguageActions from '../actions/language.actions';
 
-export function languageReducer(state: string='Hello World', action: Action) {
-    
+export type Action = LanguageActions.All;
+
+const defaultState: Language = {
+    menuOne: 'Weather',
+    menuTwo: 'Crypto Valuta',
+    menuThree: 'Recipes'
+}
+
+const newState = (state, newData) => {
+    return Object.assign({}, state, newData)
+}
+
+export function languageReducer(state: Language = defaultState, action: Action) {
     console.log(action.type)
 
     switch(action.type) {
-        case 'ENGLISH':
-            return state = 'Hello world!'
+        case LanguageActions.ENGLISH:
+            return defaultState;
 
-        case 'DANISH':
-            return state = 'Hej verden!'
+
+        case LanguageActions.DANISH:
+            return newState(state, { menuOne: "Vejret", menuTwo: "Krypto Valuta", menuThree: "Opskrifter"});
 
         default:
             return state;

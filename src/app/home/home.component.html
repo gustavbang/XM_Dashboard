@@ -1,20 +1,19 @@
 <div class="contain">
-
-    <div class="row">
-  
-      <div class="centered">
-        <div *ngIf="headline | async as p">
-        
+  <div class="row">
+    <div class="centered">
+      <div *ngIf="headline | async as p">
+        <Br/><Br/><Br/><Br/>
         <h1>{{p.text}}</h1>
-        <h4>Votes: {{p.likes}}</h4>
+        <Br/><Br/><Br/><Br/>
         <p>Like the name?</p>
-
-        <button (click)="upvoteHeadline()" class="btn btn-dark">Upvote</button>
-        <button (click)="downvoteHeadline()" class="btn btn-dark">Downvote</button>
-        <button (click)="resetHeadline()" class="btn btn-dark">Reset</button>
-
+        <h4>Votes: {{p.likes}}</h4>
+        <button (click)="upvoteHeadline()" class="btn btn-success customButton">Upvote</button>
+        <button (click)="downvoteHeadline()" class="btn btn-danger customButton">Downvote</button>
+        <button (click)="resetHeadline()" class="btn btn-secondary customButton">Reset</button>
+        <br/>
+        <p> Change the headline if u want to</p>
         <input class="form-control" [(ngModel)]="text">
-        <button (click)="editText()" class="btn btn-dark">Change title</button>
+        <button (click)="editText()" class="btn btn-dark customButton">Change title</button>
 
       </div>
 

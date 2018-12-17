@@ -1,8 +1,6 @@
+import { Language } from './entities/Language';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { MatCheckbox } from '@angular/material/checkbox';
-import { Router } from '@angular/router';
-import { AuthService } from './auth/auth.service';
+import * as LanguageActions from './actions/language.actions';
 
 //redux
 import {Store} from '@ngrx/store'
@@ -10,8 +8,9 @@ import { Observable } from 'rxjs';
 
 
 interface AppState {
-  message: string;
+  language: Language;
 }
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,19 +18,19 @@ interface AppState {
 })
 export class AppComponent {
 
-  message$: Observable<string>
+  language: Observable<Language>
 
   constructor(private store: Store<AppState>) {
-    this.message$ = this.store.select('message')
+    this.language = this.store.select('language')
   }
 
 
   englishMessage() {
-    this.store.dispatch({type: 'ENGLISH'})
+    this.store.dispatch(new LanguageActions.English())
   }
 
   danishMessage() {
-    this.store.dispatch({type: 'DANISH'})
+    this.store.dispatch(new LanguageActions.Danish())
   }
 
 }

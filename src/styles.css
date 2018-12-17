@@ -9,6 +9,10 @@
     margin: 5px;
 }
 
+.customButton {
+    width: 78px !important;
+    height: 30px;
+}
 
 .centered {
     height: 200px;

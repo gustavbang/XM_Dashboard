@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent},
 
   //pages
-  { path: 'weather', component: WeatherComponent},
+  { path: 'weather', component: WeatherComponent, canActivate: [AuthGuard]},
   { path: 'btc', component: BtcComponent, canActivate: [AuthGuard]},
   { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard]},
 ];
