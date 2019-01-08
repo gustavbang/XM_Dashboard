@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://angular2api1.azurewebsites.net/api/internships2' // not an actual api endpoint.
+  apiUrl: 'http://angular2api2.azurewebsites.net/api/internships' 
 };
 
 /*

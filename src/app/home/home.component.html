@@ -3,18 +3,19 @@
     <div class="centered">
       <div *ngIf="headline | async as p">
         <Br/><Br/><Br/><Br/>
+        
         <h1>{{p.text}}</h1>
+        
+        <input class="form-control" [(ngModel)]="text">
+        <button (click)="editText()" class="btn btn-dark customButton">Change title</button>
+
         <Br/><Br/><Br/><Br/>
-        <p>Like the name?</p>
+
         <h4>Votes: {{p.likes}}</h4>
         <button (click)="upvoteHeadline()" class="btn btn-success customButton">Upvote</button>
         <button (click)="downvoteHeadline()" class="btn btn-danger customButton">Downvote</button>
         <button (click)="resetHeadline()" class="btn btn-secondary customButton">Reset</button>
-        <br/>
-        <p> Change the headline if u want to</p>
-        <input class="form-control" [(ngModel)]="text">
-        <button (click)="editText()" class="btn btn-dark customButton">Change title</button>
-
+        <br/><br/><br/>
       </div>
 
     </div>

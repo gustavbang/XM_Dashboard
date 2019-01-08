@@ -1,6 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
-
 .contain {
     margin-top: 50px;
 }
@@ -10,7 +9,7 @@
 }
 
 .customButton {
-    width: 78px !important;
+    width: 83px !important;
     height: 30px;
 }
 
@@ -23,3 +22,8 @@
     margin-top: -200px;
     margin-left: -200px;
 }
+
+@font-face {
+    font-family: titleFont;
+    src: url(assets/font/TitleFont.ttf) format("opentype");
+  }

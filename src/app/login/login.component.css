@@ -1,8 +1,9 @@
-.top {
-    margin-top: 100px;
+.login {
+    margin-top: 50px;
 }
 
-#btnLogin {
-    margin-top: 0px;
-    width: 60px;
+
+.background {
+    background-color: black;
+    height: 100%;
 }

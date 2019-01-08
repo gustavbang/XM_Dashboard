@@ -17,7 +17,6 @@ interface AppState {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   language: Observable<Language>
 
   constructor(private store: Store<AppState>) {

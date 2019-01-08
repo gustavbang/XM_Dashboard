@@ -1,5 +1,6 @@
+import { URL } from './../auth/auth.guard';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 
@@ -9,15 +10,13 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginForm: FormGroup;
 
-  loginForm: any;
-
-  constructor(private fb: FormBuilder, private router: Router, 
+  constructor(private formBuilder: FormBuilder, private router: Router, 
     private authService: AuthService) { }
 
-
   ngOnInit() {
-    this.loginForm = this.fb.group(
+    this.loginForm = this.formBuilder.group(
       {
         username: ['', [Validators.required, Validators.minLength(5)] ],
         password: ['', Validators.required] 
@@ -26,25 +25,14 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(loginForm) {
-
     if (loginForm.valid) {
-
-      // Send request to back-end to validate login.
       this.authService.login().subscribe(result => {
-        // Navigate based on a certain condition.
-        console.log("hej igen");
-
-        this.router.navigate(['/home']);  
+        console.log("2");
+        this.router.navigate([URL]);  
       });
-
-      console.log("hej");
-      
-
+      console.log("1");
     } else {
-      // Punish user for not filling out fields.
+      console.log("Error: Fields not filled out")
     }
-
-    console.log(loginForm);
   }
-
 }

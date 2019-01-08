@@ -1,0 +1,19 @@
+<p>
+  You have marked the following recipes:
+</p>
+
+<div *ngFor="let recipe of deliveryRecipes" class="card mb-4 shadow-sm box">
+    <br />
+    <img src={{recipe.img}} fill="#55595c" width="95%" height="100%">
+    <div class="card-body">
+    <div class="card-title">{{recipe.title}}</div>
+    <!--<img mat-card-image src={{recipe.img}} alt="Photo of recipe"> -->
+    <div class="card-text">
+    <p>
+      Ingredients: {{recipe.ingredients}}
+    </p></div>
+
+<p>Do you wish to order these home?</p>
+
+<button type="button" class="btn btn-dark customButton">Order</button>
+

@@ -1,4 +1,8 @@
-import { RecipesComponent } from './../recipes/recipes.component';
+import { PageNotFoundComponent } from './../page-not-found/page-not-found.component';
+import { RefrigeratorComponent } from './../groceries/refrigerator/refrigerator.component';
+import { RecipeComponent } from './../groceries/recipe/recipe.component';
+import { DeliveryComponent } from './../groceries/delivery/delivery.component';
+import { GroceriesComponent } from './../groceries/groceries.component';
 import { BtcComponent } from './../btc/btc.component';
 import { AppComponent } from './../app.component';
 import { LoginComponent } from './../login/login.component';
@@ -11,12 +15,22 @@ import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: '', component: LoginComponent},
+  { path: '', component: HomeComponent},
+  { path: 'login', component: LoginComponent},
+
 
   //pages
   { path: 'weather', component: WeatherComponent, canActivate: [AuthGuard]},
   { path: 'btc', component: BtcComponent, canActivate: [AuthGuard]},
-  { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard]},
+  { path: 'groceries', component: GroceriesComponent/*, canActivate: [AuthGuard] */,
+    children: [
+      {path: 'delivery', component: DeliveryComponent},
+      {path: 'recipe', component: RecipeComponent},
+      {path: 'refrigerator', component: RefrigeratorComponent},
+    ]
+},
+{ path: '**', component: PageNotFoundComponent },
+
 ];
 
 

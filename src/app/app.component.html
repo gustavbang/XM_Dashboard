@@ -1,19 +1,20 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<button (click)="danishMessage()" class="btn btn-info customButton right">Danish</button>
-<button (click)="englishMessage()" class="btn btn-success customButton right">English</button>
-
   <div class="row">
-    <div class="col-sm-10">
-
-        <div *ngIf="language | async as q">
-
-        <button type="button" routerLink="home" class="btn btn-default">
-            <img src="assets/img/logo.png" alt="HTML tutorial" style="width:60px;height:60px;border:0;">
+    <div class="col-sm-12">
+        <div *ngIf="language | async as q" class="banner">
+          
+        <button type="button" routerLink="home" class="btn btn-default logo">buzy
         </button>
-        <button type="button" routerLink="weather" class="btn btn-warning customButton">{{q.menuOne}}</button>
-        <button type="button" routerLink="btc" class="btn btn-primary customButton">{{q.menuTwo}}</button>
-        <button type="button" routerLink="recipes" class="btn btn-danger customButton">{{q.menuThree}}</button>
+
+        <button type="button" routerLink="weather" class="btn btn-light customButton">{{q.menuOne}}</button>
+        <button type="button" routerLink="btc" class="btn btn-light customButton">{{q.menuTwo}}</button>
+        <button type="button" routerLink="groceries" class="btn btn-light customButton">{{q.menuThree}}</button>
+
+
+        <button (click)="danishMessage()" class="btn btn-info customButton right">Danish</button>
+        <button (click)="englishMessage()" class="btn btn-success customButton">English</button>
+
       </div>
+      
       <router-outlet></router-outlet>
     </div>
   </div>

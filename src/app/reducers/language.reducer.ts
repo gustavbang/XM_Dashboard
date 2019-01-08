@@ -3,17 +3,17 @@ import * as LanguageActions from '../actions/language.actions';
 
 export type Action = LanguageActions.All;
 
-const defaultState: Language = {
+export const defaultState: Language = {
     menuOne: 'Weather',
-    menuTwo: 'Crypto Valuta',
-    menuThree: 'Recipes'
+    menuTwo: 'CryptoCurrency',
+    menuThree: 'Groceries'
 }
 
 const newState = (state, newData) => {
     return Object.assign({}, state, newData)
 }
 
-export function languageReducer(state: Language = defaultState, action: Action) {
+export function languageReducer(state: Language = defaultState, action: any) {
     console.log(action.type)
 
     switch(action.type) {
@@ -22,7 +22,7 @@ export function languageReducer(state: Language = defaultState, action: Action) 
 
 
         case LanguageActions.DANISH:
-            return newState(state, { menuOne: "Vejret", menuTwo: "Krypto Valuta", menuThree: "Opskrifter"});
+            return newState(state, { menuOne: "Vejret", menuTwo: "Krypto Valuta", menuThree: "Indkøb"});
 
         default:
             return state;

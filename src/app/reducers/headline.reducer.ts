@@ -4,7 +4,7 @@ import * as HeadlineActions from '../actions/headline.actions';
 export type Action = HeadlineActions.All;
 
 const defaultState: Headline = {
-    text: 'XM-Dashboard',
+    text: 'Buzy',
     likes: 0
 }
 

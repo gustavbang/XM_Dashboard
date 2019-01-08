@@ -1,4 +1,4 @@
-import { WeatherServiceService } from './../weather-service.service';
+import { WeatherService } from '../weather.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -9,10 +9,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class WeatherComponent implements OnInit {
   locationForm: FormGroup;
-
   weather:any;
 
-  constructor(private _weatherService: WeatherServiceService) { }
+  constructor(private _weatherService: WeatherService) { }
 
   ngOnInit() {
     this.locationForm = new FormGroup({
@@ -23,9 +22,8 @@ export class WeatherComponent implements OnInit {
   
   onSubmit(): void {
     console.log(this.locationForm.get('city').value + " " + this.locationForm.get('code').value)
-    this._weatherService.getWeather(this.locationForm.get('city').value, this.locationForm.get('code').value).subscribe(response => {
-      this.weather = response });
+    
+    this._weatherService.getWeather(this.locationForm.get('city').value, this.locationForm.get('code').value)
+    .subscribe(response => {this.weather = response });
   }
-  
-
 }

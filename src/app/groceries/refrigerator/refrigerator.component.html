@@ -1,0 +1,53 @@
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search By Name"
+            style="width:300px" [(ngModel)]="searchTerm" />
+</div>
+<table class="table">
+    <tbody>
+      <tr>
+          <th scope="col">Meat:</th>
+          <td *ngFor="let x of meat | filterFood: searchTerm"> 
+              {{x.name}}
+          </td>
+        </tr>
+
+        <tr>
+            <th scope="row">Vegetables:</th>
+            <td *ngFor="let x of vegetable | filterFood: searchTerm"> 
+                {{x.name}}
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">Dairy products:</th>
+            <td *ngFor="let x of dairy | filterFood: searchTerm"> 
+                {{x.name}}
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">Liquids:</th>
+            <td *ngFor="let x of liquids | filterFood: searchTerm"> 
+                {{x.name}}
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">Sauce:</th>
+            <td *ngFor="let x of sauce | filterFood: searchTerm"> 
+                {{x.name}}
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">Extra:</th>
+            <td *ngFor="let x of extra | filterFood: searchTerm"> 
+                {{x.name}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<button type="button" class="btn btn-dark customButton">Add item</button>
+<button type="button" class="btn btn-dark customButton">Remove item</button>

@@ -4,5 +4,30 @@
     margin-top: 15%;
 }
 .right {
-    float:right;
+    margin-left: 680px;
+}
+
+.logo {
+background-color: darkslategray;
+border: 0px;
+}
+
+.title {
+    margin-left: 120px; width:60px;height:60px;border:0;
+}
+
+.banner {
+    background-color: darkslategrey;
+}
+
+.logo {
+    color: white;
+    border: none;
+    background-color: inherit;
+    font-size: 50px;
+    font-family: 'titleFont';
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    line-height: 1.0;
 }

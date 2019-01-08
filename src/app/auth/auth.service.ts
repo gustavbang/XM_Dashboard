@@ -9,11 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  //selvskrevet
   isLoggedIn = false;
-
-  // store the URL so we can redirect after logging in
-  redirectUrl: string;
 
   login(): Observable<boolean> {
     // IRL: Call a ws, authenticate user, save user info or token in auth.service.
@@ -22,7 +18,6 @@ export class AuthService {
       delay(1000),
       tap(val => {
         this.isLoggedIn = true
-        console.log(this.isLoggedIn);
       })
     );
   }

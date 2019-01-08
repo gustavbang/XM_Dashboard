@@ -3,6 +3,8 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
+export let URL: string = "";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,22 +13,13 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    let url: string = state.url;
-
-    return this.checkLogin(url);
+    URL = state.url;
+    return this.checkLogin();
   }
 
-  //selvskrevet
-  checkLogin(url: string): boolean {
-    console.log("AuthGuard siger at isLoggedIn er: " + this.authService.isLoggedIn);
-    
+  checkLogin(): boolean {
     if (this.authService.isLoggedIn) { return true; }
-
-    // Store the attempted URL for redirecting
-    this.authService.redirectUrl = url;
-
-    // Navigate to the login page with extras
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
     return false;
   }
 }
