@@ -48,6 +48,10 @@
     </tbody>
 </table>
 
+<label><b>Category</b></label>
+<input type="text" #category required>
+<label><b>Name</b></label>
+<input type="text" #name required>
 
-<button type="button" class="btn btn-dark customButton">Add item</button>
-<button type="button" class="btn btn-dark customButton">Remove item</button>
+<button type="button" class="btn btn-dark customButton" (click)="addItem(category.value, name.value)">Add item</button>
+<button type="button" class="btn btn-dark customButton" (click)="removeItem(category.value, name.value)">Remove item</button>

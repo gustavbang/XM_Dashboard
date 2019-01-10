@@ -2,7 +2,7 @@ import { AppPage } from './app.po';
 import { browser, by, element } from 'protractor';
 
 
-describe('workspace-project App', () => {
+describe('buzy E2E', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -11,14 +11,13 @@ describe('workspace-project App', () => {
 
   it('should display app name', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('XM-Dashboard');
+    expect(page.getParagraphText()).toEqual('buzy');
   });
 
   it('should display buttons', () => {
     page.navigateTo();
     expect(page.getWeatherButton().getText()).toEqual('Weather');
-    expect(page.getBTCButton().getText()).toEqual('CryptoCurrency');
-    expect(page.getRecipesButton().getText()).toEqual('Recipes');
+    expect(page.getRecipesButton().getText()).toEqual('Groceries');
   });
 
 
@@ -26,7 +25,7 @@ describe('workspace-project App', () => {
     page.navigateTo();
     page.getWeatherButton().click();    
     element(by.id('username')).sendKeys('gustav10');
-    element(by.id('password')).sendKeys('codename');
+    element(by.id('password')).sendKeys('topsecretpassword');
     page.getLoginButton().click();
   });
 });

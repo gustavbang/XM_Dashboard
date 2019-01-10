@@ -1,4 +1,4 @@
-import { WeatherService } from '../weather.service';
+import { WeatherService } from '../services/weather.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 

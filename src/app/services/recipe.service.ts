@@ -1,4 +1,4 @@
-import { Recipe } from './entities/Recipe';
+import { Recipe } from '../../app/entities/Recipe';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { map, tap } from 'rxjs/operators';

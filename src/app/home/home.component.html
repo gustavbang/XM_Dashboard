@@ -4,7 +4,7 @@
       <div *ngIf="headline | async as p">
         <Br/><Br/><Br/><Br/>
         
-        <h1>{{p.text}}</h1>
+        <h1 class="logoText">{{p.text}}</h1>
         
         <input class="form-control" [(ngModel)]="text">
         <button (click)="editText()" class="btn btn-dark customButton">Change title</button>

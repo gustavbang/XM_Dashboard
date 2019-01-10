@@ -3,7 +3,6 @@ import { RefrigeratorComponent } from './../groceries/refrigerator/refrigerator.
 import { RecipeComponent } from './../groceries/recipe/recipe.component';
 import { DeliveryComponent } from './../groceries/delivery/delivery.component';
 import { GroceriesComponent } from './../groceries/groceries.component';
-import { BtcComponent } from './../btc/btc.component';
 import { AppComponent } from './../app.component';
 import { LoginComponent } from './../login/login.component';
 import { WeatherComponent } from './../weather/weather.component';
@@ -21,8 +20,7 @@ const routes: Routes = [
 
   //pages
   { path: 'weather', component: WeatherComponent, canActivate: [AuthGuard]},
-  { path: 'btc', component: BtcComponent, canActivate: [AuthGuard]},
-  { path: 'groceries', component: GroceriesComponent/*, canActivate: [AuthGuard] */,
+  { path: 'groceries', component: GroceriesComponent, canActivate: [AuthGuard],
     children: [
       {path: 'delivery', component: DeliveryComponent},
       {path: 'recipe', component: RecipeComponent},

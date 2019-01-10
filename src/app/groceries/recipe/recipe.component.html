@@ -1,3 +1,15 @@
+<div class="container" >
+  <div *ngFor="let recipe of recipes" class="box">
+      <div *ngIf="recipe.ingredients">
+          <div *ngIf="recipe._id != '123'" class="innerBox card mb-4 shadow-sm">
+
+        <app-display-recipe [recipe]="recipe">
+        </app-display-recipe>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <button class="open-button" (click)="openForm()">Create Recipe</button>
 
@@ -16,54 +28,5 @@
 
     <button type="submit" class="btn">Create</button>
     <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
-  </form>
-</div>
-
-
-<div class="container" >
-  <div *ngFor="let recipe of recipes" class="box">
-      <div *ngIf="recipe.ingredients" class="card mb-4 shadow-sm" class="innerBox">
-
-            <!-- det her skal virke 
-        <display-recipe [recipe]="recipe"> (recipeEditClicked)="onRecipeEditClicked($event)"
-        </display-recipe> -->
-        <!-- istedet for det her-->
-      <img src={{recipe.img}} fill="#55595c" width="95%" height="100%">
-
-            <div class="card-body">
-          <div class="card-title">{{recipe.title}}</div>
-          <!--<img mat-card-image src={{recipe.img}} alt="Photo of recipe"> -->
-          <div class="card-text">
-          <p>
-            Ingredients: {{recipe.ingredients}}
-          </p>
-        </div>
-          <div class="btn-group">
-            <button class="btn btn-dark customButton" (click)="openEditForm(recipe)">Edit</button>
-            <button class="btn btn-dark customButton" (click)="onDeleteClick(recipe)">Delete</button>
-            <button class="btn btn-dark customButton" (click)="addToDelivery(recipe)">Add to delivery</button>
-          </div>
-
-          <small class="text-muted">9 mins</small>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="form-popup" id="myEditForm">
-  <form class="form-container" [formGroup]="editForm" (ngSubmit)="onEditClick()">
-    <h1>Edit Recipe</h1>
-
-    <label><b>Title</b></label>
-    <input type="text" formControlName="title" placeholder="Enter Title" class="form-control" required>
-
-    <label><b>Image</b></label>
-    <input type="text" formControlName="image" placeholder="Enter Image URL"  class="form-control" required>
-
-    <label><b>Ingredients</b></label>
-    <input type="text" formControlName="ingredients" placeholder="Enter Ingredients"  class="form-control" required>
-
-    <button type="submit" class="btn">Edit</button>
-    <button type="button" class="btn cancel" (click)="closeEditForm()">Close</button>
   </form>
 </div>

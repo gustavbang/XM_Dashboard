@@ -8,7 +8,7 @@ export const RESET = '@Post Reset';
 
 export class EditText implements Action {
     readonly type = EDIT_TEXT;
-
+//constructor til at passe data ind
     constructor(public payload: string) {}
 }
 

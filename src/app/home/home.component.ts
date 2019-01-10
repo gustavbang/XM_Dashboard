@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   text: string;
 
   constructor(private store: Store<AppState>) {
+    //access nrgx store
     this.headline = this.store.select('headline')
    }
 

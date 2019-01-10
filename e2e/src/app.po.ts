@@ -13,12 +13,8 @@ export class AppPage {
     return element(by.css('[routerlink="weather"]'))
   }
 
-  getBTCButton() {
-    return element(by.css('[routerlink="btc"]'))
-  }
-
   getRecipesButton() {
-    return element(by.css('[routerlink="recipes"]'))
+    return element(by.css('[routerlink="groceries"]'))
   }
 
   getLoginButton() {

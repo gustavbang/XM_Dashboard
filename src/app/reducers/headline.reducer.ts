@@ -3,8 +3,8 @@ import * as HeadlineActions from '../actions/headline.actions';
 
 export type Action = HeadlineActions.All;
 
-const defaultState: Headline = {
-    text: 'Buzy',
+export const defaultState: Headline = {
+    text: 'buzy',
     likes: 0
 }
 
@@ -12,7 +12,7 @@ const newState = (state, newData) => {
     return Object.assign({}, state, newData)
 }
 
-export function headlineReducer(state : Headline = defaultState, action: Action) {
+export function headlineReducer(state : Headline = defaultState, action: any) {
     console.log(action.type)
 
     switch(action.type) {

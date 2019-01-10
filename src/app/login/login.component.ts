@@ -24,9 +24,10 @@ export class LoginComponent implements OnInit {
     )
   }
 
-  onSubmit(loginForm) {
+  onSubmit(loginForm: FormGroup) {
     if (loginForm.valid) {
-      this.authService.login().subscribe(result => {
+      this.authService.login()
+      .subscribe(result => {
         console.log("2");
         this.router.navigate([URL]);  
       });
